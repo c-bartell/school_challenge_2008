@@ -10,4 +10,10 @@ class School
   def add_student_name(name)
     @student_names << name
   end
+
+  def end_time
+    hour = start_time[0..-3].to_i
+    hour += hours_in_school_day
+    "#{hour}:00"
+  end
 end
