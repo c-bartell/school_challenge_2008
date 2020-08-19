@@ -12,7 +12,8 @@ class School
   end
 
   def end_time
-    hour = start_time[0..-3].to_i
+    time = start_time.split(':')
+    hour = time[0].to_i
     hour += hours_in_school_day
     if hour >= 24
       hour -=24
