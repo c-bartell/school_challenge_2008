@@ -15,9 +15,11 @@ class School
     time = start_time.split(':')
     hour = time[0].to_i
     hour += hours_in_school_day
+
     if hour >= 24
       hour -=24
     end
+
     "#{hour}:00"
   end
 
@@ -34,5 +36,19 @@ class School
     end
 
     standard_names
+  end
+
+  def convert_end_time_to_clock_time
+    time = end_time.split(":")
+    hour = time[0].to_i
+
+    if hour == 0
+      hour = 12
+    elsif hour > 12
+      hour -= 12
+    else
+    end
+
+    "#{hour}:00"
   end
 end
